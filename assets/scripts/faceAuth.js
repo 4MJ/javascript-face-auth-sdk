@@ -1,10 +1,10 @@
- /**   
-// * Description of the file: The jss file for the sdk face auth interface login and register pages. Add link pointers with {@link linkname}   
-// * @author Mambo Joy Cho  
-// * @date Date created  23/09/2020 
-// * Contributors : contributor name,
-// * @Reference: Code snippet from github.com/webrtc/samples/blog/gh-pages/src/content/getusermedia/canvas/index.html
-// **/
+//  /**   
+// // * Description of the file: The jss file for the sdk face auth interface login and register pages. Add link pointers with {@link linkname}   
+// // * @author Mambo Joy Cho  
+// // * @date Date created  23/09/2020 
+// // * Contributors : contributor name,
+// // * @Reference: Code snippet from github.com/webrtc/samples/blog/gh-pages/src/content/getusermedia/canvas/index.html
+// // **/
 
 'use strict';
 // Put variables in global scope to make them available to the browser console.

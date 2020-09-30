@@ -380,7 +380,7 @@ var _sevenFaceAuth = require("seven-face-auth");
 // **/
 (0, _sevenFaceAuth.templatefaceui)({
   path_url: "login",
-  shape: "square"
+  shape: "circle"
 });
 },{"seven-face-auth":"node_modules/seven-face-auth/index.js"}],"../../../../../../usr/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -410,7 +410,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38179" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42593" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

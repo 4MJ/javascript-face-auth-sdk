@@ -8,7 +8,7 @@
 const verify = `
 <!-- video camera section -->
 <div class="app_header box">
-    <div class="video_container circle">
+    <div class="video_container circle ripple">
         <video playsinline autoplay id="video" class="circle"></video>
     </div>
     <div class="app_picture">

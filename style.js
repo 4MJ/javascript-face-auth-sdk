@@ -4,6 +4,7 @@
 // * @date Date created  25/09/2020 
 // * Contributors : contributor name,
 // **/
+
 styles = `
 .app_body {
   display: flex;
@@ -12,7 +13,6 @@ styles = `
   height: 500px;
   padding: 10px;
   background-color: #fefefefe;
-  border: 1px solid #c3c0c0;
 }
 /* Styles containing the camera section for both pages and the input field for the register page */
   .box {
@@ -25,7 +25,7 @@ styles = `
   .app_header {
     display: flex;
     flex-direction: column;
-    flex: 0.8;
+    flex: 0.6;
     justify-content: space-between;
     padding-top: 0em;
   }
@@ -34,17 +34,17 @@ styles = `
   }
   .video_container {
     width: 75%;
-    height: 75%;
+    height: 90%;
     background-color: hsl(122, 6%, 16%);
    
   }
-
+​
   .video_container > video{
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
-
+​
   /* Styles for the button and footer text of the pages */
    
   .app__footer {
@@ -76,20 +76,26 @@ styles = `
     font-size: 1.1em;
     color: hsl(222, 16%, 6%);
   }
-
+​
   /* media query responsiveness of video container for particular screen sizes */
   @media screen and (min-width : 490px){
     .video_container{
-      width: 50%;
+      width: 46%;
     }
   }
   @media screen and (min-width: 440px) and (max-width : 489px){
     .video_container{
-      width: 60%;
+      width: 45%;
     }
   }
-
+  @media screen and (max-width : 439px){
+    .video_container{
+      width: 45%;
+    }
+  }
+​
   .alert_message{
+    flex: 0.2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +107,7 @@ styles = `
     padding: 0.6em;
   }
   /* loader */
-
+​
   .loader {
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
@@ -119,10 +125,50 @@ styles = `
       transform: rotate(360deg);
     }
   }
-
+​
+  .ripple {
+    box-sizing:border-box;
+    position:relative;
+  }
   
+  .ripple:before {
+    animation:ripple 1s ease-out infinite;
+    border:4px solid  #09c;
+    border-radius:100%;
+    bottom:0;
+    box-sizing:border-box;
+    content:"";
+    left:0;
+    position:absolute;
+    right:0;
+    top:0;
+  }
+  
+  .ripple:after {
+    animation:ripple 1s 1s ease-out infinite;
+    border:4px solid  #09c;
+    border-radius:100%;
+    bottom:0;
+    box-sizing:border-box;
+    content:"";
+    left:0;
+    position:absolute;
+    right:0;
+    top:0;
+  }
+  
+  @keyframes ripple {
+    0% {
+      opacity:.25;
+    }
+    100% {
+      border-radius:100%;
+      opacity:0;
+      transform:scale(1);
+    }
+  }
 `;
-
+​
 module.exports = {
   styles: styles,
 };

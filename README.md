@@ -23,7 +23,7 @@ templatefaceui({
 ...
 
 ## Options
-Seven Face Auth supports 2 options, both options are based on what you want as outcome:
+Seven Face Auth supports 2 options, both options are based on what you want as outcome and are required:
 
 * *path_url* - _login / register_ (No default, hence you have to state if you want the login or the register page)
 * *shape* - _square / circle_ (Default is sqaure, This is the give the shape of the camera spot)

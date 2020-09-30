@@ -2,7 +2,8 @@
 // * Description of the file: The html file for the sdk face auth interface login. Add link pointers with {@link linkname}   
 // * @author Mambo Joy Cho  
 // * @date Date created  28/09/2020 
-// * Contributors : contributor name,
+// * Contributors : OLinga Emmanuel
+// * References: https://webrtc.org/
 // **/
 "use strict";
 const API_URL = "http://46.101.119.210";

@@ -44,7 +44,7 @@ function templatefaceui(options) {
       ele[i].style.borderRadius = "0%";
     }
   }else{
-    // error
+    // get error
   }
 }
 

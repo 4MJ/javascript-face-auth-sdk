@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Mambo Joy, olinga emmanuel hugues",
+  "author": "Mambo Joy, Olinga Emmanuel Hugues",
   "license": "ISC",
   "dependencies": {}
 }

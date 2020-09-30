@@ -29,7 +29,7 @@ function takepicture() {
     context.drawImage(video, 0, 0, width, height);
     verifier(canvas.toDataURL("image/jpeg"));
   } else {
-    //
+    //error state
   }
 }
 

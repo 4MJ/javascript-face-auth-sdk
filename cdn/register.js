@@ -27,7 +27,7 @@ function startup() {
     canvas = (window.canvas = document.querySelector("canvas"));
     startbutton = document.getElementById("register");
 
-
+    // getting the media device
     navigator.mediaDevices
         .getUserMedia({ video: true, audio: false })
         .then(function (stream) {
@@ -37,6 +37,18 @@ function startup() {
         .catch(function (err) {
             console.log("An error occurred: " + err);
         });
+    
+    // getting various media devices
+    function getConnectedDevices(type, callback) {
+        navigator.mediaDevices.enumerateDevices()
+            .then(devices => {
+                const filtered = devices.filter(device => device.kind === type);
+                callback(filtered);
+            });
+    }
+    
+    getConnectedDevices('video', cameras => console.log('Cameras found', cameras));
+    // where code ends
 
     video.addEventListener(
         "canplay",

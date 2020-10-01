@@ -25,7 +25,7 @@ const verify = `
         <span id="login_label">Login</span>
         <div class="loader" id="loader" style="display: none;"></div>
     </button>
-    <p>Power by SevenGPS</p>
+    <p>Powered by SevenGPS</p>
 </div>
 
 `;

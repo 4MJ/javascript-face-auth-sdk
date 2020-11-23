@@ -380,7 +380,9 @@ var _sevenFaceAuth = require("seven-face-auth");
 // **/
 (0, _sevenFaceAuth.templatefaceui)({
   path_url: "login",
-  shape: "circle"
+  shape: "circle",
+  buttonColor: "#ffffff",
+  bgColor: "#05AB9F"
 });
 },{"seven-face-auth":"node_modules/seven-face-auth/index.js"}],"../../../../../../usr/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

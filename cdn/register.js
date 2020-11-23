@@ -29,7 +29,10 @@ function startup() {
 
     // getting the media device
     navigator.mediaDevices
-        .getUserMedia({ video: true, audio: false })
+        .getUserMedia({
+            video: true,
+            audio: false
+        })
         .then(function (stream) {
             video.srcObject = stream;
             video.play();
@@ -37,7 +40,7 @@ function startup() {
         .catch(function (err) {
             console.log("An error occurred: " + err);
         });
-    
+
     // getting various media devices
     function getConnectedDevices(type, callback) {
         navigator.mediaDevices.enumerateDevices()
@@ -46,8 +49,35 @@ function startup() {
                 callback(filtered);
             });
     }
-    
+
     getConnectedDevices('video', cameras => console.log('Cameras found', cameras));
+
+    // Updates the select element with the provided set of cameras
+    function updateCameraList(cameras) {
+        const listElement = document.querySelector('select#availableCameras');
+        listElement.innerHTML = '';
+        cameras.map(camera => {
+            const cameraOption = document.createElement('option');
+            cameraOption.label = camera.label;
+            cameraOption.value = camera.deviceId;
+        }).forEach(cameraOption => listElement.add(cameraOption));
+    }
+
+    // Fetch an array of devices of a certain type
+    async function getConnectedDevices(type) {
+        const devices = await navigator.mediaDevices.enumerateDevices();
+        return devices.filter(device => device.kind === type)
+    }
+
+    // Get the initial set of cameras connected
+    const videoCameras = getConnectedDevices('videoinput');
+    updateCameraList(videoCameras);
+
+    // Listen for changes to media devices and update the list accordingly
+    navigator.mediaDevices.addEventListener('devicechange', event => {
+        const newCameraList = getConnectedDevices('video');
+        updateCameraList(newCameraList);
+    });
     // where code ends
 
     video.addEventListener(
@@ -81,28 +111,27 @@ function startup() {
             loader.style.display = "block";
             login_label.style.display = "none";
 
-           let face = takepicture();
+            let face = takepicture();
             ev.preventDefault();
 
             // getting the name
             var name = document.getElementById("name").value;
             console.log(name);
             const blobUrl = b64toBlob(face);
-            // console.log(blobUrl);
-            // console.log(face);
-            // console.log(name);
             var bodyFormData = new FormData();
             bodyFormData.append("image", blobUrl);
             axios({
-                method: "post",
-                url: `${API_URL}/api/register`,
-                data: bodyFormData,
-                headers: {
-                    username: name,
-                    "Content-Type": "multipart/form-data",
-                },
-            })
-                .then(function ({ data }) {
+                    method: "post",
+                    url: `${API_URL}/api/register`,
+                    data: bodyFormData,
+                    headers: {
+                        username: name,
+                        "Content-Type": "multipart/form-data",
+                    },
+                })
+                .then(function ({
+                    data
+                }) {
                     //handle success
                     if (data.status == false) {
                         // error message
@@ -147,7 +176,9 @@ function b64toBlob(dataURI) {
     for (var i = 0; i < byteString.length; i++) {
         ia[i] = byteString.charCodeAt(i);
     }
-    return new Blob([ab], { type: "image/jpeg" });
+    return new Blob([ab], {
+        type: "image/jpeg"
+    });
 }
 
 // Capture a photo by fetching the current contents of the video

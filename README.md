@@ -18,7 +18,7 @@ import {templatefaceui} from "seven-face-auth" ;
 
 templatefaceui({
     path_url:"login",
-    shape: "square",
+    shape: "circle",
     buttonColor: "#ffffff",
     bgColor: "#05AB9F"
 })
